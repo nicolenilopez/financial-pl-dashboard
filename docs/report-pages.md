@@ -1,38 +1,30 @@
-# Report pages
+# Report pages and business questions
 
-This document summarizes the intended business use of the three completed report pages. Detailed descriptions of exact visual interactions and screenshots will be added after reviewing the exported report.
+The Financial P&L Dashboard is organized around three analytical views.
 
-## Financial Overview
+## 1. Financial Overview
 
-**Purpose:** Provide an executive summary of financial performance.
+**Purpose:** Present the main financial indicators in a concise executive view.
 
-**Business questions**
-- What are actual revenue, gross profit, OPEX, and EBITDA?
-- How do these results compare with budget?
-- Which key financial metric requires attention?
+**Questions answered**
+- What are the reported revenue, gross profit, OPEX, and EBITDA?
+- How do these KPIs compare with budget?
+- Which measures show the most significant deviations?
 
-## P&L Statement
+## 2. P&L Statement
 
-**Purpose:** Offer a detailed financial statement with actual and budget figures.
+**Purpose:** Present financial statement lines with actuals, budget figures, and variance analysis.
 
-**Business questions**
-- Which lines of the income statement show the largest variances?
-- How do revenue and expenses affect gross profit and EBITDA?
-- How do variance amounts and percentages differ across line items?
+**Questions answered**
+- Which revenue, cost, or expense lines differ from budget?
+- How large are these differences in absolute and percentage terms?
+- How do individual P&L lines contribute to the overall result?
 
-## Variance Analysis
+## 3. Variance Analysis
 
-**Purpose:** Examine differences between planned and actual financial performance.
+**Purpose:** Explore where actual financial performance diverges from budget.
 
-**Business questions**
-- Which areas contribute most to operating expense overruns?
-- Which factors account for revenue and EBITDA differences?
-- Where should follow-up analysis focus?
-
-## Screenshots to add
-
-- [ ] `screenshots/01-financial-overview.png`
-- [ ] `screenshots/02-pl-statement.png`
-- [ ] `screenshots/03-variance-analysis.png`
-
-Before uploading, inspect the screenshots for profile details, account identifiers, or other unwanted information.
+**Questions answered**
+- What are the main revenue and EBITDA variances?
+- Which departments show the greatest operating expense differences?
+- Which deviations deserve additional investigation?
