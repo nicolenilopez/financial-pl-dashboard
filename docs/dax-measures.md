@@ -36,7 +36,7 @@ CALCULATE(
 
 ## Detailed P&L - Financial statement logic
 
-**PL Variance F-U** - calculates the actual-versus-budget difference and applies the direction defined in `PL_Layout[VarianceSign]`. This allows positive results to indicate favorable performance and negative results to indicate unfavorable performance across revenue, profit, and expense lines. The measure returns blank when either input is missing.
+**PL Variance F-U** - calculates the actual vs. budget difference and applies the direction defined in `PL_Layout[VarianceSign]`. This allows positive results to indicate favorable performance and negative results to indicate unfavorable performance across revenue, profit, and expense lines. The measure returns blank when either input is missing.
 
 ```dax
 PL Variance F-U =
