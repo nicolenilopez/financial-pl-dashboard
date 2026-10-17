@@ -60,6 +60,7 @@ Revenue, OPEX, and EBITDA variance KPIs, EBITDA shortfall drivers, unfavorable a
 
 - [Report pages and business questions](docs/report-pages.md)
 - [Selected DAX measures and calculation logic](docs/dax-measures.md)
+- [Data model and relationships](docs/data-model.md)
 
 ## Dataset
 
