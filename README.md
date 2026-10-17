@@ -21,6 +21,26 @@ All figures are illustrative and do not represent the financial results of a rea
 
 See [Report pages and business questions](docs/report-pages.md) for a page-by-page explanation.
 
+## Report screenshots
+
+### 1. Overview — Financial Performance Overview
+
+![Financial Performance Overview](screenshots/Financial%20P%26L%20-%20Overview.png)
+
+Executive view of financial KPIs, monthly Revenue and EBITDA comparisons, the profit waterfall, and profitability margins.
+
+### 2. Detailed P&L — Profit & Loss Statement
+
+![Profit & Loss Statement](screenshots/Financial%20P%26L%20-%20Detailed%20P%26L.png)
+
+Detailed Actual, Budget, Variance, Variance %, Prior Year, and YoY % comparisons across P&L categories.
+
+### 3. Variance Analysis — Budget Variance Analysis
+
+![Budget Variance Analysis](screenshots/Financial%20P%26L%20-%20Variance%20Analysis.png)
+
+Revenue, OPEX, and EBITDA variance KPIs, EBITDA shortfall drivers, unfavorable account variances, and department-level expenses.
+
 ## Key financial metrics
 
 - Revenue, Gross Profit, EBITDA, and Net Profit
