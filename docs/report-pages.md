@@ -1,30 +1,39 @@
 # Report pages and business questions
 
-The Financial P&L Dashboard is organized around three analytical views.
+The report contains three navigation tabs: **Overview**, **Detailed P&L**, and **Variance Analysis**.
 
-## 1. Financial Overview
+## 1. Overview
 
-**Purpose:** Present the main financial indicators in a concise executive view.
+**Purpose:** Provide a high-level view of financial performance and profitability.
 
-**Questions answered**
-- What are the reported revenue, gross profit, OPEX, and EBITDA?
-- How do these KPIs compare with budget?
-- Which measures show the most significant deviations?
+**Report visuals**
+- KPI cards for Revenue, Gross Profit, EBITDA, and Net Profit, each with budget and prior-year comparisons.
+- **Revenue by month** — Actual and Budget.
+- **EBITDA by month** — Actual and Budget.
+- **From revenue to net profit** — a waterfall showing cost and expense contributions.
+- **Profitability margins** — Gross Margin, EBITDA Margin, and Net Margin, comparing Actual and Budget.
+- Year and Month slicers.
 
-## 2. P&L Statement
+**Business questions**
+- How do current revenue and profits compare to budget and last year?
+- How do actual monthly revenue and EBITDA compare with planned values?
+- How do COGS, OPEX, depreciation and amortization, interest, and tax contribute to net profit?
+- How do actual profitability margins compare with budget?
 
-**Purpose:** Present financial statement lines with actuals, budget figures, and variance analysis.
+## 2. Detailed P&L
 
-**Questions answered**
-- Which revenue, cost, or expense lines differ from budget?
-- How large are these differences in absolute and percentage terms?
-- How do individual P&L lines contribute to the overall result?
+**Purpose:** Examine financial statement line items and compare actual figures with budget.
+
+**Business questions**
+- Which line items differ most from budget?
+- How do individual revenue, cost, and expense lines affect the overall financial result?
 
 ## 3. Variance Analysis
 
-**Purpose:** Explore where actual financial performance diverges from budget.
+**Purpose:** Review and investigate actual-versus-budget differences.
 
-**Questions answered**
-- What are the main revenue and EBITDA variances?
-- Which departments show the greatest operating expense differences?
-- Which deviations deserve additional investigation?
+**Business questions**
+- Where are the largest financial variances?
+- Which differences should receive closer attention?
+
+The Detailed P&L and Variance Analysis descriptions can be expanded with their exact visuals and interactions.
