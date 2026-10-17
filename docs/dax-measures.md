@@ -1,30 +1,30 @@
 # DAX Measures & Calculation Logic
 
-This document highlights selected DAX measures used in the Financial P&L Dashboard, demonstrating the calculation logic behind financial KPIs, profitability analysis, budget variances, and year-over-year comparisons.
+This document describes the DAX calculations underpinning the Financial P&L Dashboard, including profitability metrics, prior-year comparisons, favorable/unfavorable (F/U) variance logic, and the EBITDA variance bridge.
 
-The measures are organized by report functionality, covering the **Overview**, **Detailed P&L**, and **Variance Analysis** pages.
+The examples are grouped by their role in the report: **Overview**, **Detailed P&L**, and **Variance Analysis**.
 
-## Core financial calculations
+## Overview — Financial performance
 
-**Gross Profit** — revenue after cost of goods sold.
+**Gross Profit** — calculates the amount remaining after subtracting cost of goods sold (COGS) from revenue.
 
 ```dax
 Gross Profit = [Revenue] - [COGS]
 ```
 
-**EBITDA** — gross profit less operating expenses.
+**EBITDA** — calculates earnings before interest, taxes, depreciation, and amortization by subtracting operating expenses (OPEX) from gross profit. Depreciation, interest, and tax are accounted for separately in the report's profit calculations.
 
 ```dax
 EBITDA = [Gross Profit] - [OPEX]
 ```
 
-**Gross Margin %** — share of revenue retained as gross profit.
+**Gross Margin %** — expresses gross profit as a percentage of revenue. `DIVIDE` handles zero or blank denominators by returning a blank result.
 
 ```dax
 Gross Margin % = DIVIDE([Gross Profit], [Revenue])
 ```
 
-**Revenue PY** — revenue for the corresponding prior-year period.
+**Revenue PY** — evaluates revenue for the corresponding period in the previous year using the report's date dimension. This measure supports year-over-year comparisons in the Overview page.
 
 ```dax
 Revenue PY =
@@ -34,9 +34,9 @@ CALCULATE(
 )
 ```
 
-## Detailed P&L
+## Detailed P&L — Financial statement logic
 
-**PL Variance F-U** — normalizes actual-versus-budget differences using the configured favorable/unfavorable sign for each financial statement line.
+**PL Variance F-U** — calculates the actual-versus-budget difference and applies the direction defined in `PL_Layout[VarianceSign]`. This allows positive results to indicate favorable performance and negative results to indicate unfavorable performance across revenue, profit, and expense lines. The measure returns blank when either input is missing.
 
 ```dax
 PL Variance F-U =
@@ -51,14 +51,14 @@ RETURN
     )
 ```
 
-**PL Variance F-U %** — compares the signed variance with the absolute budget value.
+**PL Variance F-U %** — expresses the favorable/unfavorable variance relative to the absolute budget amount, preserving the variance's sign without reversing it when the budget is negative.
 
 ```dax
 PL Variance F-U % =
 DIVIDE([PL Variance F-U], ABS([PL Budget]))
 ```
 
-**PL YoY %** — compares current values with prior-year figures, using the absolute prior-year amount as the denominator.
+**PL YoY %** — calculates the year-over-year percentage change for each P&L line. The absolute prior-year denominator keeps the sign of the change independent of the prior-year amount's sign; a blank or zero prior-year value produces a blank result.
 
 ```dax
 PL YoY % =
@@ -70,15 +70,15 @@ RETURN
     )
 ```
 
-## Variance Analysis
+## Variance Analysis — Drivers of budget performance
 
-**OPEX Over Budget** — positive results represent expenses exceeding budget.
+**OPEX Over Budget** — measures spending above or below budget. Positive values indicate an overrun; negative values indicate spending below budget.
 
 ```dax
 OPEX Over Budget = [OPEX Actual] - [OPEX Budget]
 ```
 
-**EBITDA Bridge Value** — supplies the components for the budget-to-actual EBITDA waterfall.
+**EBITDA Bridge Value** — returns the budgeted EBITDA starting value and the signed revenue, COGS, and OPEX differences used in the EBITDA variance waterfall. Revenue shortfalls and cost overruns reduce the bridge, while favorable movements increase it.
 
 ```dax
 EBITDA Bridge Value =
@@ -92,7 +92,7 @@ SWITCH(
 )
 ```
 
-**Account EBITDA Impact** — evaluates revenue and expense lines with opposite variance signs so that negative values indicate unfavorable EBITDA impacts.
+**Account EBITDA Impact** — evaluates each account's contribution to EBITDA variance using category-specific sign conventions: actual minus budget for revenue, and budget minus actual for COGS and OPEX. Negative results indicate an unfavorable impact on EBITDA.
 
 ```dax
 Account EBITDA Impact =
