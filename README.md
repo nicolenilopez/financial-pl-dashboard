@@ -51,5 +51,3 @@ The report uses generated synthetic data. Values, trends, and conclusions are il
 | `dax/measures.md` | DAX documentation template, pending confirmation of the exact measures |
 | `screenshots/` | Planned screenshots of the completed report pages |
 | `powerbi/` | Planned Power BI report files, after checking metadata and data-sharing safety |
-
-**Publication note:** The interactive report is already published externally. A direct report link is intentionally omitted until the published report's metadata has been checked for identifying information.
