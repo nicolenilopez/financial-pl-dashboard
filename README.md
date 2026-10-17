@@ -1,46 +1,44 @@
 # Financial P&L Dashboard
 
-A **Power BI financial reporting project** built with synthetic data. The report brings together an executive overview, a detailed profit and loss statement, and variance analysis to explore performance against budget.
+An interactive **Power BI financial reporting project** built with synthetic sample data. The dashboard examines revenue, profitability, and performance against budget through three report pages.
 
-All values are illustrative and do not represent the financial results of a real organization.
+All figures are illustrative and do not represent a real organization's financial results.
 
 ## Business objectives
 
-The dashboard is designed to help answer questions such as:
-
-- How do revenue, gross profit, operating expenses (OPEX), and EBITDA compare with budget?
-- Which P&L line items show the largest actual-versus-budget differences?
-- Where do operating expenses exceed budget?
-- How do revenue and expense variances affect overall profitability?
+- Monitor revenue, gross profit, EBITDA, and net profit against budget and the previous year.
+- Review monthly revenue and EBITDA trends against budget.
+- Understand the contributions of costs and expenses to net profit.
+- Examine differences between actual and budgeted financial performance.
 
 ## Report pages
 
-| Page | Focus |
+| Report page | Focus |
 | --- | --- |
-| **Financial Overview** | Headline financial KPIs and a high-level view of performance. |
-| **P&L Statement** | Financial statement lines presented alongside actuals, budget, and variances. |
-| **Variance Analysis** | Revenue, expense, and EBITDA differences, including departmental analysis. |
+| **Overview** | Revenue, Gross Profit, EBITDA, and Net Profit KPI cards; monthly Revenue and EBITDA comparisons; a revenue-to-net-profit waterfall; and profitability margins. |
+| **Detailed P&L** | Detailed financial statement analysis. |
+| **Variance Analysis** | Analysis of differences between actual results and budget. |
 
-For more detail, see [Report pages and business questions](docs/report-pages.md).
+See [Report pages and business questions](docs/report-pages.md) for further detail.
 
 ## Key financial metrics
 
 - Revenue
 - Gross Profit
-- Operating Expenses (OPEX)
 - EBITDA
-- Actual vs. Budget variance
-- Variance percentage
+- Net Profit
+- Gross Margin, EBITDA Margin, and Net Margin
+- Actual vs. Budget and Prior Year comparisons
 
 Financial amounts are displayed in **USD**.
 
 ## Tools and techniques
 
-- **Power BI Desktop** — report development and visualizations
-- **DAX** — financial measures and variance calculations
-- **Data modelling** — organizing financial data for analysis
-- **Report design** — KPI cards, financial statement layouts, and interactive navigation
+- **Power BI Desktop** — interactive report development
+- **DAX** — financial calculations and comparisons
+- **Data modelling** — structuring data for analysis
+- **Report design** — KPI cards, combination of tables and charts, page navigation, and date slicers
 
 ## Dataset
 
-This portfolio report uses **generated sample data** for demonstration purposes. Its figures and trends are fictional.
+The dashboard uses **generated synthetic data** for demonstration purposes. Its financial figures and trends are fictional.
