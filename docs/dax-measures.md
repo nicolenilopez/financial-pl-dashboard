@@ -1,6 +1,8 @@
-# Selected DAX measures
+# DAX Measures & Calculation Logic
 
-These measures are reproduced from the Financial P&L Dashboard TMDL export. They illustrate calculation logic across the Overview, Detailed P&L and Variance Analysis pages.
+This document highlights selected DAX measures used in the Financial P&L Dashboard, demonstrating the calculation logic behind financial KPIs, profitability analysis, budget variances, and year-over-year comparisons.
+
+The measures are organized by report functionality, covering the **Overview**, **Detailed P&L**, and **Variance Analysis** pages.
 
 ## Core financial calculations
 
@@ -104,5 +106,3 @@ RETURN
         BLANK()
     )
 ```
-
-The measures are a curated selection, not the complete semantic model.
