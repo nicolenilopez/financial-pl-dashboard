@@ -53,7 +53,3 @@ The report uses generated synthetic data. Values, trends, and conclusions are il
 | `powerbi/` | Planned Power BI report files, after checking metadata and data-sharing safety |
 
 **Publication note:** The interactive report is already published externally. A direct report link is intentionally omitted until the published report's metadata has been checked for identifying information.
-
-## Reproducibility
-
-The source files, dataset generation details, and setup instructions will be added after inspection of the finished project. Do not commit credentials, account identifiers, or other unintended personal details.
