@@ -56,6 +56,11 @@ Revenue, OPEX, and EBITDA variance KPIs, EBITDA shortfall drivers, unfavorable a
 - **Data modelling** — structuring data for financial analysis
 - **Report design** — KPI cards, financial statement matrix, waterfall and comparison charts, navigation buttons, and Year/Month slicers
 
+## Technical documentation
+
+- [Report pages and business questions](docs/report-pages.md)
+- [Selected DAX measures and calculation logic](docs/dax-measures.md)
+
 ## Dataset
 
 The dashboard uses **generated synthetic data** for demonstration purposes. Its financial figures and trends are fictional.
