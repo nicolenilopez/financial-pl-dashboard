@@ -247,12 +247,12 @@ RETURN
     )
 ```
 
-### Unfavourable Account Impact
+### Unfavorable Account Impact
 
 Isolates unfavorable account contributions by returning the absolute magnitude of negative EBITDA impacts and leaving other results blank.
 
 ```dax
-Unfavourable Account Impact =
+Unfavorable Account Impact =
 VAR Impact = [Account EBITDA Impact]
 RETURN
     IF(
