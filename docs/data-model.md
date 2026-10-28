@@ -19,7 +19,7 @@ The two fact tables remain separate because actual transactions are recorded by 
 | --- | --- |
 | `Dim_Date` | Provides calendar dates and attributes used for Year and Month filtering and prior-year comparisons. |
 | `Dim_Account` | Defines account names and financial groupings used to calculate Revenue, COGS, OPEX, and other P&L lines. |
-| `Dim_Department` | Provides department categories for operating expense and budget analysis. |
+| `Dim_Department` | Enables department-level filtering and analysis of actual and budgeted financial performance. |
 
 ## Relationships
 
@@ -44,7 +44,7 @@ Budget values are intended for month-level reporting. A custom day-level filter 
 
 ## Reporting and layout tables
 
-The semantic model also contains disconnected tables used to organize specialized report visuals:
+The semantic model also includes disconnected layout tables used to structure custom financial reporting visuals:
 
 | Table | Purpose |
 | --- | --- |
@@ -52,12 +52,13 @@ The semantic model also contains disconnected tables used to organize specialize
 | `Margin_Layout` | Selects Gross Margin, EBITDA Margin, and Net Margin rows in the profitability comparison. |
 | `Waterfall_Steps` | Provides the categories for the Revenue-to-Net-Profit bridge. |
 | `EBITDA_Bridge` | Provides the steps for the budget-to-actual EBITDA waterfall. |
-| `Measures_` | Organizes the report's DAX measures. |
 
-The layout tables do not require physical relationships to the fact tables. DAX measures interpret the selected layout row using functions such as `SELECTEDVALUE`, `SWITCH`, and `TREATAS`.
+These tables do not require physical relationships to the fact tables. DAX measures use functions such as `SELECTEDVALUE`, `SWITCH`, and `TREATAS` to interpret layout selections and return the appropriate financial calculations.
+
+The model also includes `Measures_`, a dedicated table used to organize DAX measures separately from the underlying data and reporting layout tables.
 
 ## Calculation approach
 
-Base measures aggregate the actual amounts in `Fact_GL` and budget amounts in `Fact_Budget`. Other measures calculate financial KPIs, prior-year comparisons, and budget variances from those aggregates. The custom P&L layout applies line-specific favorable/unfavorable sign conventions so that the statement can consistently distinguish positive and negative performance.
+Base measures aggregate actual and budget amounts from their respective fact tables. Additional DAX measures calculate financial KPIs, prior-year comparisons, budget variances, and custom P&L statement values.
 
 See [DAX Measures & Calculation Logic](dax-measures.md) for selected measure definitions.
