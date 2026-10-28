@@ -1,6 +1,6 @@
 # Financial P&L Dashboard
 
-An interactive **Power BI financial reporting dashboard** designed to monitor profitability, compare actual results against budget and prior-year performance, and investigate the financial drivers behind variances.
+An interactive **Power BI financial dashboard** for monitoring profitability, comparing actual performance against budget and prior-year results, and identifying the key drivers of financial variances.
 
 Built using **synthetic financial data** for portfolio demonstration. All results are illustrative, not those of a real organization. Financial amounts are reported in **USD**.
 
@@ -13,7 +13,7 @@ The **Overview** brings together Revenue, Gross Profit, EBITDA, and Net Profit K
 ## Business objectives
 
 - Monitor Revenue, Gross Profit, EBITDA, and Net Profit against budget and the previous year.
-- Identify monthly differences between actual and budgeted Revenue and EBITDA.
+- Analyze monthly Revenue and EBITDA performance against budget.
 - Understand how costs and expenses affect profitability.
 - Investigate financial statement variances by account and operating expenses by department.
 
@@ -42,7 +42,7 @@ For the purpose and business questions behind each page, see [Report pages and b
 ## Technical implementation
 
 - **Power BI Desktop:** Three-page report with navigation tabs, Year and Month slicers, KPI cards, a financial statement matrix, and waterfall and comparison charts.
-- **Data modelling:** Separate actuals (`Fact_GL`) and monthly budgets (`Fact_Budget`) connected to shared Date, Account, and Department dimensions.
+- **Data modeling:** Separate actuals (`Fact_GL`) and monthly budgets (`Fact_Budget`) connected to shared Date, Account, and Department dimensions.
 - **DAX:** Profitability and margin measures, prior-year comparisons, budget variances, and signed EBITDA variance impacts.
 - **Custom financial layouts:** Disconnected layout tables organize P&L lines, profitability margins, and waterfall steps. The P&L layout controls display order and favorable/unfavorable variance direction.
 
