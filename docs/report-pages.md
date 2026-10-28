@@ -36,17 +36,17 @@ The Financial P&L Dashboard consists of three pages: **Overview**, **Detailed P&
 
 ## 3. Variance Analysis — Budget Variance Analysis
 
-**Purpose:** Identify and investigate unfavorable deviations from budget, including the drivers of an EBITDA shortfall.
+**Purpose:** Analyze deviations from budget and identify the key drivers of EBITDA performance.
 
 **Visuals**
 - KPI cards for **Revenue Variance**, **OPEX Over Budget**, and **EBITDA Variance**, showing amounts and budget deviation percentages.
 - **What drove the EBITDA shortfall?** — Budget-to-Actual EBITDA waterfall with changes attributed to **Revenue**, **COGS**, and **OPEX**.
-- **Largest unfavourable account variances** — ranked horizontal bar chart highlighting the accounts with the greatest negative impact on EBITDA.
+- **Largest unfavorable account variances** — ranked horizontal bar chart highlighting the accounts with the greatest negative impact on EBITDA.
 - **Operating expenses by department** — Actual vs. Budget column chart comparing operating expenses across departments.
 - **Expense detail** — department-level Actual, Budget, and **F(U)** values in USD thousands.
 
 **Business questions**
 - How do Revenue, OPEX, and EBITDA differ from budget?
-- How much of the EBITDA shortfall is attributable to revenue, COGS, and operating expenses?
+- How do revenue, COGS, and operating expenses contribute to the EBITDA variance?
 - Which individual accounts have the largest unfavorable impact on EBITDA?
 - Which departments have the largest unfavorable operating expense variances?
