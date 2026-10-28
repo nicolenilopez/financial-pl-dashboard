@@ -2,6 +2,12 @@
 
 The Financial P&L Dashboard uses a shared-dimension model with separate tables for actual financial transactions and budget amounts. This structure supports consistent analysis by date, account, and department across the Overview, Detailed P&L, and Variance Analysis report pages.
 
+## Model overview
+
+The Financial P&L Dashboard uses a shared-dimension data model with separate fact tables for actual financial transactions and monthly budgets. Both fact tables are connected to common Date, Account, and Department dimensions, allowing consistent filtering and comparisons between actual and budgeted performance.
+
+![Financial P&L Data Model](../screenshots/data-model.png)
+
 ## Fact tables
 
 | Table | Description |
