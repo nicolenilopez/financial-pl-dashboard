@@ -1,67 +1,61 @@
 # Financial P&L Dashboard
 
-An interactive **Power BI financial reporting project** built with synthetic sample data. The dashboard explores revenue, profitability, and performance against budget through three connected report pages.
+An interactive **Power BI financial reporting dashboard** designed to monitor profitability, compare actual results against budget and prior-year performance, and investigate the financial drivers behind variances.
 
-All figures are illustrative and do not represent the financial results of a real organization. Financial amounts are displayed in **USD**.
+Built using **synthetic financial data** for portfolio demonstration. All results are illustrative, not those of a real organization. Financial amounts are reported in **USD**.
+
+## Dashboard preview
+
+![Financial Performance Overview](screenshots/Financial%20P%26L%20-%20Overview.png)
+
+The **Overview** brings together Revenue, Gross Profit, EBITDA, and Net Profit KPIs, monthly Actual vs. Budget comparisons, a revenue-to-net-profit waterfall, and profitability margins.
 
 ## Business objectives
 
 - Monitor Revenue, Gross Profit, EBITDA, and Net Profit against budget and the previous year.
-- Compare monthly revenue and EBITDA performance with budget.
-- Understand how costs and expenses contribute to Net Profit.
-- Review detailed P&L lines and investigate financial and departmental budget variances.
+- Identify monthly differences between actual and budgeted Revenue and EBITDA.
+- Understand how costs and expenses affect profitability.
+- Investigate financial statement variances by account and operating expenses by department.
 
 ## Report pages
 
-| Navigation tab | Page heading | Focus |
-| --- | --- | --- |
-| **Overview** | Financial Performance Overview | Financial KPI cards, monthly Revenue and EBITDA comparisons, a revenue-to-net-profit waterfall, and profitability margins. |
-| **Detailed P&L** | Profit & Loss Statement | A detailed statement comparing Actual, Budget, Variance, Variance %, Prior Year, and YoY % across financial lines and subcategories. |
-| **Variance Analysis** | Budget Variance Analysis | Revenue variance, OPEX over budget, and EBITDA variance KPIs; an EBITDA variance waterfall; unfavorable account variances; department expense comparison and detail. |
+| Page | What it helps analyze |
+| --- | --- |
+| **Overview** | Financial performance, monthly trends, profit drivers, and margins. |
+| **Detailed P&L** | Actual, Budget, Variance, Variance %, Prior Year, and YoY % across financial statement lines. |
+| **Variance Analysis** | EBITDA variance drivers, unfavorable account impacts, and departmental operating expenses. |
 
-See [Report pages and business questions](docs/report-pages.md) for a page-by-page explanation.
-
-## Report screenshots
-
-### 1. Overview — Financial Performance Overview
-
-![Financial Performance Overview](screenshots/Financial%20P%26L%20-%20Overview.png)
-
-Executive view of financial KPIs, monthly Revenue and EBITDA comparisons, the profit waterfall, and profitability margins.
-
-### 2. Detailed P&L — Profit & Loss Statement
+### Detailed P&L — Profit & Loss Statement
 
 ![Profit & Loss Statement](screenshots/Financial%20P%26L%20-%20Detailed%20P%26L.png)
 
-Detailed Actual, Budget, Variance, Variance %, Prior Year, and YoY % comparisons across P&L categories.
+A structured financial statement with summary and detail lines, budget comparisons, and favorable/unfavorable variance formatting.
 
-### 3. Variance Analysis — Budget Variance Analysis
+### Variance Analysis — Budget Variance Analysis
 
 ![Budget Variance Analysis](screenshots/Financial%20P%26L%20-%20Variance%20Analysis.png)
 
-Revenue, OPEX, and EBITDA variance KPIs, EBITDA shortfall drivers, unfavorable account variances, and department-level expenses.
+A closer look at Revenue, OPEX, and EBITDA deviations, with an EBITDA bridge, account-level impacts, and department expense comparisons.
+
+For the purpose and business questions behind each page, see [Report pages and business questions](docs/report-pages.md).
+
+## Technical implementation
+
+- **Power BI Desktop:** Three-page report with navigation tabs, Year and Month slicers, KPI cards, a financial statement matrix, and waterfall and comparison charts.
+- **Data modelling:** Separate actuals (`Fact_GL`) and monthly budgets (`Fact_Budget`) connected to shared Date, Account, and Department dimensions.
+- **DAX:** Profitability and margin measures, prior-year comparisons, budget variances, and signed EBITDA variance impacts.
+- **Custom financial layouts:** Disconnected layout tables organize P&L lines, profitability margins, and waterfall steps. The P&L layout controls display order and favorable/unfavorable variance direction.
 
 ## Key financial metrics
 
-- Revenue, Gross Profit, EBITDA, and Net Profit
-- Cost of Sales and Operating Expenses (OPEX)
-- Gross Margin, EBITDA Margin, and Net Margin
-- Actual vs. Budget variance and variance percentage
-- Prior Year and year-over-year (YoY) comparison
-
-## Tools and techniques
-
-- **Power BI Desktop** — interactive report development
-- **DAX** — financial measures and variance calculations
-- **Data modelling** — structuring data for financial analysis
-- **Report design** — KPI cards, financial statement matrix, waterfall and comparison charts, navigation buttons, and Year/Month slicers
+Revenue · Gross Profit · EBITDA · Net Profit · Gross Margin % · EBITDA Margin % · Net Margin % · Actual vs. Budget · Prior Year · YoY %
 
 ## Technical documentation
 
-- [Report pages and business questions](docs/report-pages.md)
-- [Selected DAX measures and calculation logic](docs/dax-measures.md)
 - [Data model and relationships](docs/data-model.md)
+- [Selected DAX measures and calculation logic](docs/dax-measures.md)
+- [Report pages and business questions](docs/report-pages.md)
 
-## Dataset
+## Data and scope
 
-The dashboard uses **generated synthetic data** for demonstration purposes. Its financial figures and trends are fictional.
+The dashboard uses **generated synthetic financial data**. Figures and trends are fictional and intended solely to demonstrate Power BI financial reporting and analysis. Budget amounts are recorded at a monthly level, so the report is designed for Year and Month filtering.
