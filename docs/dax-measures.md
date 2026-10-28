@@ -8,7 +8,7 @@ The Overview page uses base financial calculations, profitability ratios, and ti
 
 ### Gross Profit
 
-calculates the amount remaining after subtracting cost of goods sold (COGS) from revenue.
+Calculates revenue minus cost of goods sold (COGS).
 
 ```dax
 Gross Profit = [Revenue] - [COGS]
@@ -16,7 +16,7 @@ Gross Profit = [Revenue] - [COGS]
 
 ### EBITDA
 
-calculates earnings before interest, taxes, depreciation, and amortization by subtracting operating expenses (OPEX) from gross profit.
+Calculates earnings before interest, taxes, depreciation, and amortization by subtracting operating expenses (OPEX) from gross profit.
 
 ```dax
 EBITDA = [Gross Profit] - [OPEX]
@@ -24,7 +24,7 @@ EBITDA = [Gross Profit] - [OPEX]
 
 ### Gross Margin %
 
-expresses gross profit as a percentage of revenue. `DIVIDE` handles zero or blank denominators by returning a blank result.
+Expresses gross profit as a percentage of revenue. `DIVIDE` handles zero or blank denominators by returning a blank result.
 
 ```dax
 Gross Margin % = DIVIDE([Gross Profit], [Revenue])
@@ -32,7 +32,7 @@ Gross Margin % = DIVIDE([Gross Profit], [Revenue])
 
 ### Revenue PY
 
-evaluates revenue for the corresponding period in the previous year using the shared date dimension. 
+Evaluates revenue for the corresponding period in the previous year using the shared date dimension.
 
 ```dax
 Revenue PY =
@@ -44,7 +44,7 @@ CALCULATE(
 
 ### Margin Actual
 
-uses the disconnected `Margin_Layout` table to dynamically return the appropriate profitability ratio for each row of the margin comparison visual.
+Uses the disconnected `Margin_Layout` table to dynamically return the appropriate profitability ratio for each row of the margin comparison visual.
 
 ```dax
 Margin Actual =
@@ -62,7 +62,7 @@ The Detailed P&L page uses a disconnected `PL_Layout` table to control statement
 
 ### PL Actual
 
-dynamically returns the actual financial value for each P&L row. `SWITCH` maps statement lines to existing measures, while `CALCULATE` handles specific expense groups and `TREATAS` applies individual account names as filters.
+Dynamically returns the actual financial value for each P&L row. `SWITCH` maps statement lines to existing measures, while `CALCULATE` handles specific expense groups and `TREATAS` applies individual account names as filters.
 
 ```dax
 PL Actual =
@@ -106,7 +106,7 @@ RETURN
 
 ### PL Budget
 
-uses the same statement layout to return budget values. Its structure mirrors `PL Actual`, allowing both measures to be compared on the same financial statement rows.
+Uses the same statement layout to return budget values. Its structure mirrors `PL Actual`, allowing both measures to be compared on the same financial statement rows.
 
 ```dax
 PL Budget =
@@ -152,7 +152,7 @@ RETURN
 
 ### PL Variance F-U
 
-calculates the actual vs. budget difference and applies the direction defined in `PL_Layout[VarianceSign]`. This allows positive results to indicate favorable performance and negative results to indicate unfavorable performance across revenue, profit, and expense lines. The measure returns blank when either input is missing.
+Calculates the difference between actual and budget, adjusting its sign according to `PL_Layout[VarianceSign]`. This allows positive results to indicate favorable performance and negative results to indicate unfavorable performance across revenue, profit, and expense lines. The measure returns blank when either input is missing and requires a single variance direction in the current filter context.
 
 ```dax
 PL Variance F-U =
@@ -169,7 +169,7 @@ RETURN
 
 ### PL Variance F-U %
 
-expresses the favorable/unfavorable variance relative to the absolute budget amount, preserving the variance's sign without reversing it when the budget is negative.
+Expresses the favorable/unfavorable variance relative to the absolute budget amount, preserving the variance's sign without reversing it when the budget is negative.
 
 ```dax
 PL Variance F-U % =
@@ -178,7 +178,7 @@ DIVIDE([PL Variance F-U], ABS([PL Budget]))
 
 ### PL Prior Year
 
-evaluates each custom P&L statement line for the corresponding period in the previous year.
+Evaluates each custom P&L statement line for the corresponding period in the previous year.
 
 ```dax
 PL Prior Year =
@@ -190,7 +190,7 @@ CALCULATE(
 
 ### PL YoY %
 
-calculates the year-over-year percentage change for each P&L line. The absolute prior-year denominator keeps the sign of the change independent of the prior-year amount's sign; a blank or zero prior-year value produces a blank result.
+Calculates the year-over-year percentage change for each P&L line. The absolute prior-year denominator keeps the sign of the change independent of the prior-year amount's sign; a blank or zero prior-year value produces a blank result.
 
 ```dax
 PL YoY % =
@@ -208,7 +208,7 @@ The Variance Analysis page evaluates differences between actual and budget perfo
 
 ### OPEX Over Budget
 
-measures spending above or below budget. Positive values indicate an overrun; negative values indicate spending below budget.
+Measures spending above or below budget. Positive values indicate an overrun; negative values indicate spending below budget.
 
 ```dax
 OPEX Over Budget = [OPEX Actual] - [OPEX Budget]
@@ -216,7 +216,7 @@ OPEX Over Budget = [OPEX Actual] - [OPEX Budget]
 
 ### EBITDA Bridge Value
 
-returns the budgeted EBITDA starting value and the signed revenue, COGS, and OPEX differences used in the EBITDA variance waterfall. Revenue shortfalls and cost overruns reduce the bridge, while favorable movements increase it.
+Returns the budgeted EBITDA starting value and the signed revenue, COGS, and OPEX differences used in the EBITDA variance waterfall. Revenue shortfalls and cost overruns reduce the bridge, while favorable movements increase it.
 
 ```dax
 EBITDA Bridge Value =
@@ -232,7 +232,7 @@ SWITCH(
 
 ### Account EBITDA Impact
 
-evaluates each account's contribution to EBITDA variance using category-specific sign conventions: actual minus budget for revenue, and budget minus actual for COGS and OPEX. Negative results indicate an unfavorable impact on EBITDA.
+Evaluates each account's contribution to EBITDA variance using category-specific sign conventions: actual minus budget for revenue, and budget minus actual for COGS and OPEX. Negative results indicate an unfavorable impact on EBITDA.
 
 ```dax
 Account EBITDA Impact =
@@ -249,7 +249,7 @@ RETURN
 
 ### Unfavourable Account Impact
 
-isolates unfavorable account contributions by returning the absolute magnitude of negative EBITDA impacts and leaving other results blank.
+Isolates unfavorable account contributions by returning the absolute magnitude of negative EBITDA impacts and leaving other results blank.
 
 ```dax
 Unfavourable Account Impact =
@@ -268,7 +268,7 @@ DAX measures also control visual styling in the Detailed P&L statement, allowing
 
 ### PL Row Background
 
-assigns a darker background to major financial statement lines, including Revenue, Gross Profit, EBITDA, Operating Profit, Profit Before Tax, and Net Profit.
+Returns a background color for each P&L row, distinguishing key financial totals from supporting detail.
 
 ```dax
 PL Row Background =
