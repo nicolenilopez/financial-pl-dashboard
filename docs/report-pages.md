@@ -1,6 +1,6 @@
 # Report pages and business questions
 
-The report contains three navigation tabs: **Overview**, **Detailed P&L**, and **Variance Analysis**. Each page includes Year and Month slicers. Financial figures are in USD; the detailed statement and variance visuals also display values in USD thousands where labelled.
+The Financial P&L Dashboard consists of three pages: **Overview**, **Detailed P&L**, and **Variance Analysis**. Each page includes Year and Month slicers, with financial figures presented in USD or USD thousands (where indicated).
 
 ## 1. Overview — Financial Performance Overview
 
@@ -15,9 +15,9 @@ The report contains three navigation tabs: **Overview**, **Detailed P&L**, and *
 
 **Business questions**
 - How do revenue and profitability compare with budget and the prior year?
-- How do monthly revenue and EBITDA compare with the budgeted trend?
+- How do revenue and EBITDA trends evolve throughout the year?
 - How do COGS, OPEX, depreciation and amortization, interest, and tax affect Net Profit?
-- How do actual profit margins compare with targets?
+- How do actual profitability margins compare with budget?
 
 ## 2. Detailed P&L — Profit & Loss Statement
 
@@ -26,7 +26,7 @@ The report contains three navigation tabs: **Overview**, **Detailed P&L**, and *
 **Visuals**
 - **Profit & loss detail** matrix with columns for **Actual**, **Budget**, **Variance**, **Variance %**, **Prior Year**, and **YoY %**.
 - Financial summary lines include **Revenue**, **Cost of Sales**, **Gross Profit**, **Operating Expenses**, **EBITDA**, **Depreciation**, **Operating Profit**, **Interest Expense**, **Profit Before Tax**, **Income Tax**, and **Net Profit**.
-- Detailed rows break out **Product Revenue** and **Service Revenue**; **Product Costs** and **Freight**; and operating expense categories including **Personnel**, **Marketing**, **Rent**, **Software**, **Travel**, and **Professional Services**.
+- Supporting rows provide revenue, cost of sales, and operating expense breakdowns, including product and service revenue, freight, personnel, marketing, and other expense categories.
 - Positive and negative variance formatting highlights favorable and unfavorable results; the matrix notes that **positive variance is favorable**.
 
 **Business questions**
@@ -41,12 +41,12 @@ The report contains three navigation tabs: **Overview**, **Detailed P&L**, and *
 **Visuals**
 - KPI cards for **Revenue Variance**, **OPEX Over Budget**, and **EBITDA Variance**, showing amounts and budget deviation percentages.
 - **What drove the EBITDA shortfall?** — Budget-to-Actual EBITDA waterfall with changes attributed to **Revenue**, **COGS**, and **OPEX**.
-- **Largest unfavourable account variances** — ranked horizontal bars showing the impact of Product Revenue, Salaries, Service Revenue, and Marketing on EBITDA.
-- **Operating expenses by department** — Actual vs. Budget column chart for Sales, Marketing, Operations, Finance, IT, Human Resources, and Management.
+- **Largest unfavourable account variances** — ranked horizontal bar chart highlighting the accounts with the greatest negative impact on EBITDA.
+- **Operating expenses by department** — Actual vs. Budget column chart comparing operating expenses across departments.
 - **Expense detail** — department-level Actual, Budget, and **F(U)** values in USD thousands.
 
 **Business questions**
-- By how much are Revenue and EBITDA below budget, and OPEX above budget?
+- How do Revenue, OPEX, and EBITDA differ from budget?
 - How much of the EBITDA shortfall is attributable to revenue, COGS, and operating expenses?
 - Which individual accounts have the largest unfavorable impact on EBITDA?
 - Which departments have the largest unfavorable operating expense variances?
