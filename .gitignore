@@ -1,0 +1,18 @@
+# Local Power BI / workspace temporary files
+*.pbix.tmp
+*.pbit.tmp
+*.bak
+*.tmp
+*.log
+~$*
+
+# Credentials and local settings
+.env
+.env.*
+*.pfx
+*.key
+.vscode/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
